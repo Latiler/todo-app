@@ -8,7 +8,7 @@
             </div>
             <IncompleteTable :todo-store="todoStore" />
         </div>
-        <div v-else class="no-data rounded">未完了 Todo無し</div>
+        <div v-else class="no-todo rounded">未完了 Todo無し</div>
 
 
         <!-- 完了済みTODOテーブル -->
