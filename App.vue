@@ -5,7 +5,13 @@
         </header>
 
         <main>
-            <TodoAdditionForm :todo-store="todoStore" />
+            <div class="mt-3">
+                <TodoAdditionForm :todo-store="todoStore" />
+            </div>
+
+            <div class="mt-3">
+                <TodoList :todo-store="todoStore" />
+            </div>
         </main>
     </div>
 </template>
@@ -13,15 +19,40 @@
 <script setup lang="ts">
 import "bootstrap/dist/css/bootstrap.min.css";
 import TodoAdditionForm from "./components/TodoAdditionForm.vue";
+import TodoList from "./components/TodoList.vue";
 import { useTodoStore } from "./store/todo";
 
 const todoStore = useTodoStore();
 </script>
 
 <style>
-header h1 {
-    width: 100%;
-    text-align: center;
-    font-size: medium;
+:root {
+    --back-color: #fdfdea;
+    --header-color: #f8d343;
+    --menu-bar-color: #ad9570;
+    --side-bar-color: #d5ebf2;
+    --content-color: #ffffff;
+    --footer-color: #ad9570;
+    --accent-color: #7abfd6;
+    --border-color: #575757;
+}
+
+body {
+    background-color: var(--back-color);
+
+    & header {
+        background-color: var(--header-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 2em;
+
+        & h1 {
+            text-align: center;
+            font-size: medium;
+            margin-bottom: 0px;
+        }
+    }
 }
 </style>

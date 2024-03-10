@@ -1,6 +1,6 @@
 <template>
     <div class="todo-table-wrapper">
-        <table class="table table-bordered">
+        <table id="complated-table" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>レ</th>
@@ -38,6 +38,7 @@ const props = defineProps({
 
 /**
  * 「未完了」「完了済み」を切り替えるチェックボックスがクリックされた際の処理です。
+ * @param id
  */
 function handleCompletedToggle(id: number) {
     props.todoStore?.toggleCompleted(id);

@@ -1,6 +1,6 @@
 <template>
     <div class="todo-table-wrapper">
-        <table class="table table-bordered">
+        <table id="incomplete-table" class="table table-bordered">
             <thead>
                 <tr>
                     <th>レ</th>
@@ -61,3 +61,19 @@ function handleDelete(id: number) {
     props.todoStore?.removeTodo(id);
 }
 </script>
+
+<style>
+table#incomplete-table {
+    & thead tr th {
+        background-color: var(--accent-color);
+    }
+
+    & tbody tr td {
+        background-color: var(--content-color);
+    }
+
+    & tbody tr:nth-of-type(2n) td {
+        background-color: var(--side-bar-color);
+    }
+}
+</style>

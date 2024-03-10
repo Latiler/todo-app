@@ -1,10 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Todo App
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+TODO 管理アプリのデモです。
 
-## Setup
+## セットアップ
 
-Make sure to install the dependencies:
+まず、依存ライブラリをインストールしてください。
 
 ```bash
 # npm
@@ -20,9 +20,11 @@ yarn install
 bun install
 ```
 
-## Development Server
+## 開発用ローカルサーバー
 
-Start the development server on `http://localhost:3000`:
+開発用のローカルサーバーを起動する際は、以下のコマンドを実行してください。
+
+デフォルトでは、`http://localhost:3000` にて接続を待機します。
 
 ```bash
 # npm
@@ -38,9 +40,9 @@ yarn dev
 bun run dev
 ```
 
-## Production
+## ビルド
 
-Build the application for production:
+本番環境用にビルドを行う際は、以下のコマンドを実行してください。
 
 ```bash
 # npm
@@ -56,7 +58,7 @@ yarn build
 bun run build
 ```
 
-Locally preview production build:
+ビルド後のアプリケーションの動作を確認したい場合は、以下のコマンドを実行してください。
 
 ```bash
 # npm
@@ -72,4 +74,16 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+より詳しい情報が必要な場合は、Nuxt.js の [デプロイメントドキュメント](https://nuxt.com/docs/getting-started/deployment) をご覧ください。
+
+## 使い方の簡単な説明
+
+1. アプリケーション上側のテキストボックスに TODO の内容を入力し、追加ボタンを押すと、TODO が追加されます。
+
+    - 「未完了」テーブルに TODO が表示されます。
+
+1. テーブル行の左側のチェックボックスをクリックすると、「未完了」と「完了済み」を切り替えることができます。
+
+    - 「未完了」テーブルが上側に、「完了済み」テーブルが下側に描画されます。
+
+1. テーブル行の右側の削除ボタンをクリックすることで、TODO を削除することができます。

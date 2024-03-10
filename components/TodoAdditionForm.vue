@@ -1,8 +1,12 @@
 <template>
-    <div class="todo-input-div">
-        <input v-model="todoText" class="form-control" />
+    <div id="todo-addition-form-div">
+        <div>新規 Todo</div>
 
-        <button class="btn btn-primary" @click="handleTodoAddition">追加</button>
+        <div class="todo-input-div">
+            <input v-model="todoText" class="form-control" @keypress="handleKeyPress" autofocus />
+
+            <button class="btn btn-primary" @click="handleTodoAddition">追加</button>
+        </div>
     </div>
 </template>
 
@@ -20,6 +24,17 @@ const props = defineProps({
 const todoText = ref("");
 
 /**
+ * タスク内容入力欄にて、キーが押された際の処理。
+ * エンターキーであれば、追加ボタンと同等の処理をします。
+ */
+function handleKeyPress(ev: KeyboardEvent) {
+    if (ev.key !== "Enter") {
+        return;
+    }
+    handleTodoAddition();
+}
+
+/**
  * 新しくtodoを追加します。
  */
 function handleTodoAddition() {
@@ -33,6 +48,10 @@ function handleTodoAddition() {
 </script>
 
 <style>
+#todo-addition-form-div {
+    max-width: 400px;
+}
+
 .todo-input-div {
     display: grid;
     grid-template-columns: 4fr 1fr;

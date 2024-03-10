@@ -44,20 +44,10 @@ defineProps({
 table.table {
     width: auto;
 
-    & thead tr th {
-        text-align: center;
-        vertical-align: middle;
-        background-color: var(--accent-color);
-    }
-
+    & thead tr th,
     & tbody tr td {
         text-align: center;
         vertical-align: middle;
-        background-color: var(--content-color);
-    }
-
-    & tbody tr:nth-of-type(2n) td {
-        background-color: var(--side-bar-color);
     }
 
     & .large-checkbox {
@@ -65,7 +55,7 @@ table.table {
     }
 }
 
-.no-data {
+.no-todo {
     width: 100%;
     height: 5em;
 
